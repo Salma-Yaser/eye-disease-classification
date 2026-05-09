@@ -281,7 +281,7 @@ def show_footer():
 
 
 # =========================
-# Check Required Files
+# Check Required Files + Init App
 # =========================
 
 missing_files = []
@@ -290,14 +290,19 @@ for path in [MODEL_PATH, SCALER_PATH, ENCODER_PATH]:
     if not os.path.exists(path):
         missing_files.append(path)
 
-if missing_files:
-    st.error("Some required model files are missing:")
-    for file in missing_files:
-        st.write(file)
-    st.stop()
+
+def init_app():
+    if missing_files:
+        st.error("Some required model files are missing:")
+        for file in missing_files:
+            st.write(file)
+        st.stop()
+
+    return load_artifacts()
 
 
-model, scaler, label_encoder = load_artifacts()
+model, scaler, label_encoder = init_app()
+
 
 
 # =========================
