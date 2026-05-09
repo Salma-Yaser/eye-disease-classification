@@ -27,4 +27,4 @@ The deployed model is **SVM + HOG**, selected because it achieved the best test 
 
 ## Disclaimer
 
-This application is for educational purposes only and should not be used as a medical diagnosis tool.
+This application is for educational purposes only and should not be used as a medical diagnosis tool--.
